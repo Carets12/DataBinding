@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.daniel.sierra.databinding.ViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:background="#74f9f8ec"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:background="#63a1a1a1"
+            android:textAlignment="center"
+            android:text="Formulary"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <!--
+           EditText de nombre contiene
+           la variable descrita en viewModel
+           **Emisor
+           -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp">
+
+            <EditText
+                android:id="@+id/Ename"
+                android:textColor="#087e3d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:maxLength="15"
+                android:textSize="25dp"
+                android:inputType="text"
+                android:textStyle="bold"
+                app:binding="@{viewModel.someText}"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <!--
+           EditText de apellido/s contiene
+           la variable descrita en viewModel
+           **Emisor
+           -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <EditText
+                android:id="@+id/Esurname"
+                android:textColor="#ac0f0c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLength="18"
+                android:textSize="25dp"
+                android:hint="Surname"
+                android:textStyle="bold"
+                app:binding="@{viewModel.anyText}"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <!--
+           EditText de edad contiene
+           la variable descrita en viewModel
+           **Emisor
+           -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <EditText
+                android:id="@+id/Eage"
+                android:textColor="#0c41ac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textSize="25dp"
+                android:hint="Age"
+                android:textStyle="bold"
+                app:binding="@{viewModel.Text}"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/Results"
+                android:textColor="#044340"
+                android:background="#97c0d2d0"
+                android:layout_width="match_parent"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Results"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:layout_marginTop="25dp"
+                />
+
+            <TextView
+                android:id="@+id/Tname"
+                android:textColor="#087e3d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Results"
+                android:text="Name:"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+                android:id="@+id/Tsurname"
+                android:textColor="#ac0f0c"
+                android:layout_below="@+id/Tname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Surname:"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+                android:id="@+id/Tage"
+                android:textColor="#0c41ac"
+                android:layout_below="@+id/Tsurname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age:"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <!--
+            TextView de nombre contiene
+            la variable descrita en viewModel
+            **Receptor
+            -->
+            <TextView
+                android:id="@+id/name"
+                android:textColor="#087e3d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/Tsurname"
+                android:layout_below="@+id/Results"
+                android:text="@{viewModel.someText}"
+                android:textSize="25dp"
+                android:maxLength="15"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:textStyle="bold" />
+
+            <!--
+           TextView de apellido/s contiene
+           la variable descrita en viewModel
+           **Receptor
+           -->
+            <TextView
+                android:id="@+id/surname"
+                android:textColor="#ac0f0c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_toRightOf="@+id/Tsurname"
+                android:text="@{viewModel.anyText}"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:maxLength="18"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                />
+
+            <!--
+           TextView de edad contiene
+           la variable descrita en viewModel
+           **Receptor
+           -->
+            <TextView
+                android:textColor="#0c41ac"
+                android:id="@+id/age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/surname"
+                android:layout_toRightOf="@+id/Tsurname"
+                android:text="@{viewModel.Text}"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:maxLength="3"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>
